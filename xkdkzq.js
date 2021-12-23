@@ -1,16 +1,17 @@
 
 /*
-12.23
+12.24 test1
 
 软件：  小程序-小打卡快赚钱
 收益：  每天1块 
 注意事项 ： 首次0.5元提现 后续6元提现
 
-获取ck：  打开软件即可------
+获取ck：  打开小程序即可------
 
 重写：-------
-https://s96.tianlingyang.com/app
-
+类型: script-request-header
+匹配URL: https://s96.tianlingyang.com/app
+脚本路径: https://raw.githubusercontent.com/yml2213/QuantumultX-test/master/xkdkzq.js
 
 主机名：-------
 s96.tianlingyang.com
