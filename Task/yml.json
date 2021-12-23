@@ -1,0 +1,8 @@
+{
+	"name": "yml",
+	"description": "https://github.com/yml2213/QuantumultX-test",
+	"task": [
+	    "0 9 * * * https://raw.githubusercontent.com/yml2213/QuantumultX-test/master/xkdkzq.js, tag=小打卡快赚钱, img-url=https://img.menglei.xyz/images/2021/12/23/logo1x1.png, enabled=true",
+	    
+	]
+    }
