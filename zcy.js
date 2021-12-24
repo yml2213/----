@@ -1,56 +1,53 @@
-
 /*
-12.23 test1
+12.23
 
-软件：  小程序-小打卡快赚钱
-收益：  每天1块 
-注意事项 ： 首次0.5元提现 后续6元提现
+软件：  走财运app (看视频脚本12个视频)
+收益：  每天一个亿(还没写完  测试好再改)
+注意事项 ： 运行js时不要打开软件app
 
-获取ck：  打开小程序即可------
+获取ck：  打开软件,看一个视频,圈x提示获取hd即可
 
-重写：-------
-类型: script-request-header
-匹配URL: https://s96.tianlingyang.com/app
-脚本路径: https://raw.githubusercontent.com/yml2213/QuantumultX-test/master/xkdkzq.js
+重写：
 
-主机名：-------
-s96.tianlingyang.com
+	类型: script-request-body
+	匹配url: https://step-money.quanxiangweilai.cn/api
+	路径: -----
+	
 
+主机名：step-money.quanxiangweilai.cn
 
 */
 
 
-
-const $ = new Env('xdkkzq');
+const $ = new Env('走财运');
 let status;
 
-status = (status = ($.getval("xdkkzqstatus") || "1")) > 1 ? `${status}` : "";
+status = (status = ($.getval("zcystatus") || "1")) > 1 ? `${status}` : "";
 
-const xdkkzqurlArr = [], xdkkzqhdArr = [], xdkkzqcount = ''
+const zcyurlArr = [], zcyhdArr = [], zcybodyArr = [], zcycount = ''
 
-let xdkkzqurl = $.getdata('xdkkzqurl')
-let xdkkzqhd = $.getdata('xdkkzqhd')
-
-
+let zcyurl = $.getdata('zcyurl')
+let zcyhd = $.getdata('zcyhd')
+let zcybody = $.getdata('zcybody')
 
 
 !(async () => {
     if (typeof $request !== "undefined") {
 
-        xdkkzqck()
+        zcyck()
 
     } else {
-        xdkkzqurlArr.push($.getdata('xdkkzqurl'))
-        xdkkzqhdArr.push($.getdata('xdkkzqhd'))
+        zcyurlArr.push($.getdata('zcyurl'))
+        zcyhdArr.push($.getdata('zcyhd'))
+        zcybodyArr.push($.getdata('zcybody'))
 
+        let zcycount = ($.getval('zcycount') || '1');
 
-        let xdkkzqcount = ($.getval('xdkkzqcount') || '1');
+        for (let i = 2; i <= zcycount; i++) {
 
-        for (let i = 2; i <= xdkkzqcount; i++) {
-
-            xdkkzqurlArr.push($.getdata(`xdkkzqurl${i}`))
-            xdkkzqhdArr.push($.getdata(`xdkkzqhd${i}`))
-
+            zcyurlArr.push($.getdata(`zcyurl${i}`))
+            zcyhdArr.push($.getdata(`zcyhd${i}`))
+            zcybodyArr.push($.getdata(`zcybody${i}`))
 
         }
 
@@ -61,27 +58,25 @@ let xdkkzqhd = $.getdata('xdkkzqhd')
                 8 * 60 * 60 * 1000
             ).toLocaleString()} ===============================================\n`);
 
-        for (let i = 0; i < xdkkzqhdArr.length; i++) {
+        for (let i = 0; i < zcyhdArr.length; i++) {
 
-            if (xdkkzqhdArr[i]) {
+            if (zcyhdArr[i]) {
 
-                xdkkzqurl = xdkkzqurlArr[i];
-                xdkkzqhd = xdkkzqhdArr[i];
-
+                zcyurl = zcyurlArr[i];
+                zcyhd = zcyhdArr[i];
+                zcybody = zcybodyArr[i];
 
                 $.index = i + 1;
-                console.log(`\n\n开始【xdkkzq${$.index}】`)
+                console.log(`\n\n开始【走财运${$.index}】`)
+
 
                 //循环运行
-                for (let c = 0; c < 11; c++) {
+                for (let c = 0; c < 1; c++) {
                     $.index = c + 1
 
-
-                    await bankuai()//你要执行的版块  
-                    await $.wait(70000)//你要延迟的时间  1000=1秒
-
-
-
+			await zcyksp()          //看视频(每天12次)
+			await $.wait(10000)      //你要延迟的时间  1000=1秒
+			
 
                 }
             }
@@ -93,62 +88,70 @@ let xdkkzqhd = $.getdata('xdkkzqhd')
     .finally(() => $.done())
 
 
-//https://s96.tianlingyang.com/app/index.php?i=2&t=0&v=1.0.0&from=wxapp&c=entry&a=wxapp&do=distribute&m=bh_rising&sign=aa2d8867e6336815aad73c4514226da1&action=sign&contr=clock&token=8cbd87c5559247c9ef16e0d5fff926c5&version=1.0.2
 
+//  https://step-money.quanxiangweilai.cn/api/gain_common_bonus     视频ck
 
-//获取ck
-function xdkkzqck() {
-    if ($request.url.indexOf("index.php?") > -1) {
-        const xdkkzqurl = $request.url
-        if (xdkkzqurl) $.setdata(xdkkzqurl, `xdkkzqurl${status}`)
-        $.log(xdkkzqurl)
+//获取视频ck
+function zcyck() {
+    if ($request.url.indexOf("gain_common_bonus") > -1) {
+	    const zcyurl = $request.url
+	    if (zcyurl) $.setdata(zcyurl, `zcyurl${status}`)
+	    $.log(zcyurl)
 
-        const xdkkzqhd = JSON.stringify($request.headers)
-        if (xdkkzqhd) $.setdata(xdkkzqhd, `xdkkzqhd${status}`)
-        $.log(xdkkzqhd)
+	    const zcyhd = JSON.stringify($request.headers)
+	    if (zcyhd) $.setdata(zcyhd, `zcyhd${status}`)
+	    $.log(zcyhd)
 
-        $.msg($.name, "", `xdkkzq${status}获取headers成功`)
+	    const zcybody = $request.body;
+	    if (zcybody) $.setdata(zcybody, `zcybody${status}`)
+	    $.log(zcybody)
 
-    }
+	    $.msg($.name, "", `走财运${status}获取headers成功`)
+         $.log(zcyurl)
+         $.log(zcyhd)
+         
+
+	}		
+    
+	
 }
 
 
 
 
-//版块 (打卡)
-function bankuai(timeout = 0) {
+//版块  zcyksp
+function zcyksp(timeout = 0) {
     return new Promise((resolve) => {
-
-        let url = {
-            url: xdkkzqurl,
-            headers: JSON.parse(xdkkzqhd),
+	
+	    let url = {
+		
+            url: zcyurl,
+            headers: JSON.parse(zcyhd),
+            body: zcybody,
         }
 
-//get  
-
-        $.get(url, async (err, resp, data) => {
+        $.post(url, async (err, resp, data) => {
             try {
 
-                data = JSON.parse(data)
+		    data = JSON.parse(data)
 
-                if (data.status == 1) {
+		    if (data.error_code == 0) {
+			    
+			    $.log(` 看视频成功了鸭, 恭喜你获得能量: ${data.data.money}`)
 
-          console.log(data.info)
-
-                } else {
-
-          console.log(data.info)
+		    } else {
+			
+			    $.log(`看视频失败了呢,不要灰心${data.message}`)
 
                 }
             } catch (e) {
 
             } finally {
 
-                resolve()
+		    resolve()
             }
         }, timeout)
     })
-
 }
 
 
