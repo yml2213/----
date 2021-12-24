@@ -1,17 +1,16 @@
 /*
-12.23
+12.24 完成
 
 软件：  走财运app (看视频脚本12个视频)
 收益：  每天一个亿(还没写完  测试好再改)
-注意事项 ： 运行js时不要打开软件app
+注意事项 ： 运行js时不要打开软件app;自行添加重写  主机名等
 
 获取ck：  打开软件,看一个视频,圈x提示获取hd即可
 
 重写：
-
-	类型: script-request-body
-	匹配url: https://step-money.quanxiangweilai.cn/api
-	路径: -----
+    类型: script-request-body
+    匹配url: https://step-money.quanxiangweilai.cn/api
+    路径: https://raw.githubusercontent.com/yml2213/QuantumultX-test/master/zcy.js
 	
 
 主机名：step-money.quanxiangweilai.cn
@@ -71,7 +70,7 @@ let zcybody = $.getdata('zcybody')
 
 
                 //循环运行
-                for (let c = 0; c < 10; c++) {
+                for (let c = 0; c < 12; c++) {
                     $.index = c + 1
 
 			await zcyksp()          //看视频(每天12次)
