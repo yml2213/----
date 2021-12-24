@@ -12,7 +12,7 @@
     匹配url: https://step-money.quanxiangweilai.cn/api
     路径: https://raw.githubusercontent.com/yml2213/QuantumultX-test/master/zcy.js
 	
-
+   
 主机名：step-money.quanxiangweilai.cn
 
 */
@@ -70,11 +70,11 @@ let zcybody = $.getdata('zcybody')
 
 
                 //循环运行
-                for (let c = 0; c < 12; c++) {
+                for (let c = 0; c < 1; c++) {
                     $.index = c + 1
 
 			await zcyksp()          //看视频(每天12次)
-			await $.wait(60000)      //你要延迟的时间  1000=1秒
+			// await $.wait(60000)      //你要延迟的时间  1000=1秒
 			
 
                 }
