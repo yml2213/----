@@ -3,6 +3,7 @@
 	"description": "https://github.com/yml2213/QuantumultX-test",
 	"task": [
 	    "0 9 * * * https://raw.githubusercontent.com/yml2213/QuantumultX-test/master/zcy.js, tag=走财运看视频, img-url=https://raw.githubusercontent.com/yml2213/QuantumultX-test/master/img/zcy.png, enabled=true",
+	    "0 9 * * * https://raw.githubusercontent.com/yml2213/QuantumultX-test/master/zcybs.js, tag=走财运步数, img-url=https://raw.githubusercontent.com/yml2213/QuantumultX-test/master/img/zcy.png, enabled=true",
 	    
 	]
     }
