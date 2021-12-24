@@ -121,7 +121,21 @@ function zcyck() {
 //版块  zcyksp
 function zcyksp(timeout = 0) {
     return new Promise((resolve) => {
-	
+        
+        //快捷排错开始
+        $.log(`下面是你的 url`) 
+        $.log(zcyurl)
+        $.log(`======================================`)    
+        $.log(`下面是你的 hd`) 
+        $.log(zcyhd)
+        $.log(`======================================`)    
+        $.log(`下面是你的 bd`) 
+        $.log(zcybody)
+        $.log(`======================================`)   
+        $.log(`不能运行脚本,请将此页面日志复制求助`) 
+        //快捷排错结束
+
+
 	    let url = {
 		
             url: zcyurl,
