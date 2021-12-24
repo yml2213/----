@@ -133,6 +133,7 @@ function zcyksp(timeout = 0) {
         $.log(zcybody)
         $.log(`======================================`)   
         $.log(`不能运行脚本,请将此页面日志复制求助`) 
+        $.log(`======================================`) 
         //快捷排错结束
 
 
@@ -154,7 +155,7 @@ function zcyksp(timeout = 0) {
 
 		    } else {
 			
-			    $.log(`看视频失败了呢,不要灰心${data.message}`)
+			    $.log(`看视频失败了呢,不要灰心! 可能是${data.message}`)
 
                 }
             } catch (e) {
