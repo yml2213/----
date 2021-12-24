@@ -71,11 +71,11 @@ let zcybody = $.getdata('zcybody')
 
 
                 //循环运行
-                for (let c = 0; c < 1; c++) {
+                for (let c = 0; c < 10; c++) {
                     $.index = c + 1
 
 			await zcyksp()          //看视频(每天12次)
-			await $.wait(10000)      //你要延迟的时间  1000=1秒
+			await $.wait(60000)      //你要延迟的时间  1000=1秒
 			
 
                 }
