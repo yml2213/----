@@ -8,7 +8,7 @@
 获取ck：  打开软件即可------
 
 重写：-------
-https://mweb.mos.csvw.com/mos-mweb/app-misc/api/home/api/v1/user/sign/info  url  script-request-body 
+https://mweb.mos.csvw.com/mos-mweb/app-misc/api/home/api/v1/user/sign/info  url  script-request-body https://raw.githubusercontent.com/yml2213/QuantumultX-test/master/sqdz.js
 
 
 主机名：mweb.mos.csvw.com
